@@ -1,0 +1,39 @@
+[project]
+name = "iat-eeg"
+version = "0.1.0"
+description = "Repositorio de proyectos de IAT-EEG"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "ipykernel>=7.2.0",
+    "jupyter>=1.1.1",
+    "lightgbm>=4.6.0",
+    "mne>=1.11.0",
+    "networkx>=3.6.1",
+    "openpyxl>=3.1.5",
+    "optuna>=4.7.0",
+    "pandas==2.3",
+    "pyarrow>=23.0.1",
+    "ruff>=0.15.6",
+    "scikit-learn==1.7",
+    "seaborn>=0.13.2",
+    "shap>=0.51.0",
+    "xgboost>=3.2.0",
+]
+
+[tool.uv]
+package = false
+
+[tool.ruff]
+line-length = 88
+# "E" (Errores de estilo), "F" (Errores de Pyflakes), "I" (Orden de imports)
+select = ["E", "F", "I"]
+# Ignorar advertencias comunes en notebooks como variables no usadas en celdas de prueba
+ignore = ["F841"] 
+
+[tool.ruff.lint]
+# Esto le dice a Ruff que limpie las importaciones no usadas automáticamente
+fixable = ["F401", "I001"]
+
+[tool.ruff.lint.isort]
+known-third-party = ["pandas", "numpy", "sklearn", "matplotlib"]
