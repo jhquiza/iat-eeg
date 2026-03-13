@@ -15,5 +15,6 @@ wheels/
 # VS Code settings
 .vscode/
 
-# data files including subdirectories
+# data directory including subdirectories
 data/**/*
+data/
